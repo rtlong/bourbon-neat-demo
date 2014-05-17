@@ -1,0 +1,88 @@
+@import bourbon
+
+$grid-columns: 12
+$column: 72.5px
+$gutter: 10px
+$max-width: 980px
+$visual-grid: true
+@import neat
+@import compass
+
+body
+  font-family: sans-serif
+
+#outer-container
+  +outer-container
+
+  // > .row
+  //   +row
+
+  #col1, #col2
+    height: 320px
+
+  .column
+    &#col1
+      +span-columns(4)
+
+    &#col2
+      +span-columns(8)
+      // +omega
+
+    &#col3, &#col4, &#col5
+      +span-columns(4)
+
+      .column
+        +span-columns(1 of 1)
+        // +omega
+
+    &#col5
+      // +omega
+
+      .row
+        +row(table)
+        border-bottom: 1px solid
+        &:last-of-type
+          border-bottom: none
+      .product
+        +span-columns(1 of 2)
+        height: 135px
+        border-right: 1px solid
+        &:last-of-type
+          border-right: none
+
+    &#bottom
+      +span-columns(12)
+      +fill-parent
+      .row
+        +row(table)
+      //   border-bottom: 1px solid
+      //   &:last-of-type
+      //     border-bottom: none
+      .product
+        +span-columns(1 of 5)
+        height: 135px
+        border-right: 1px solid
+        &:last-of-type
+          border-right: none
+
+.tile
+  border: 1px solid
+  margin-bottom: 10px
+
+  h1
+    border-bottom: 3px double
+    font-size: larger
+    padding: 3px 12px
+    margin: 0
+
+  .container
+    padding: 0 12px
+    min-height: 50px
+
+.meter
+  width: 320px
+  // height: 10px
+  background-color: black
+  margin-bottom: 10px
+  color: white
+  padding: 3px 0

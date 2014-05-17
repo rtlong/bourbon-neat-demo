@@ -1,0 +1,51 @@
+#outer-container
+  .meter
+    locked at 320px
+
+  .column#col1.tile
+    %h1 Image
+    .container
+  .column#col2.tile
+    %h1 Product Summary
+    .container
+
+  .column#col3
+    .column.tile
+      %h1 About
+      .container
+    .column.tile
+      %h1 Certs
+      .container
+    .column.tile
+      %h1 Nutrition
+      .container
+
+  .column#col4
+    .column.tile
+      %h1 Ingredients
+      .container
+        %ul
+          = list_of(1..30) do |i|
+            = i
+
+  .column#col5
+    .column.tile
+      %h1 Purchase
+      .container
+    .column.tile
+      %h1 Alternatives
+      .container
+        - (1..10).to_a.in_groups_of(2) do |group|
+          .row
+            - group.each do |i|
+              .product= i
+
+  .column#bottom.tile
+    %h1 Stuff
+    .container
+      .row
+        .product 1
+        .product 2
+        .product 3
+        .product 4
+        .product 5
